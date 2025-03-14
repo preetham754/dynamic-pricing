@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Pricing</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Dynamic Pricing - E-commerce</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Optimal Price (Updated)</th>
+            </tr>
+        </thead>
+        <tbody id="product-table">
+            {% for product in products %}
+            <tr data-id="{{ product['_id'] }}">
+                <td>{{ product['name'] }}</td>
+                <td class="price">{{ product['optimal_price'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <script>
+       
+       function updatePrices() {
+        fetch("/update_prices", { method: "POST" })
+            .then(response => response.json())
+            .then(data => console.log(data.message)); // Debugging
+
+        setTimeout(fetchPrices, 3000); // Fetch updated prices after 3 sec
+    }
+
+    function fetchPrices() {
+        fetch("/get_prices")
+            .then(response => response.json())
+            .then(data => {
+                data.forEach(product => {
+                    let row = document.querySelector(`[data-id='${product._id}']`);
+                    if (row) {
+                        row.querySelector(".price").textContent = product.optimal_price;
+                    }
+                });
+            });
+    }
+
+    setInterval(updatePrices, 10000); // Update prices every 10 sec
+    </script>
+    
+</body>
+</html>
