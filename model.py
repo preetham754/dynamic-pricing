@@ -7,7 +7,7 @@ import joblib
 df = pd.read_csv("data/salesdata.csv")
 
 # Features and target
-X = df[["demand", "competitor_price", "season"]]
+X = df[["demand", "competitor_price"]]
 y = df["price"]
 
 # Train model
