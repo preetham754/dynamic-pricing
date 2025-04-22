@@ -97,7 +97,7 @@ Expand the ML model with additional features (e.g., season, category).
 
 Credits
 
-Developed by [Your Name] as a personal project.
+Developed by preetham as a personal project.
 Inspired by GUVI’s Python course and IIT Madras certification.
 Uses open-source libraries and Bootstrap for styling.
 
@@ -105,8 +105,5 @@ License
 This project is for educational purposes only. Feel free to fork and modify, but please credit the original author.
 Contact
 
-LinkedIn: [Your LinkedIn Profile]
-Email: [Your Email]
-Open to collaboration or job opportunities in tech!
 
 
