@@ -1,0 +1,4 @@
+_id,name,category,base_price,demand,competitor_price,last_updated,image_name,optimal_price,season
+P001,Samsung S24+,Electronics,90000,200,60000,2025-04-22T16:38:44.289Z,m1.webp,878.93,
+P002,Iphone 16,Electronics,99000,300,70000,2025-04-22T16:38:44.291Z,m2.webp,1022.06,0
+P003,Airpods pro,,2,300,10005,2025-04-22T16:38:44.293Z,h1.webp,204.41,1
